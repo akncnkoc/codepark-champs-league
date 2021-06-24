@@ -28,8 +28,8 @@
 					unset($teams[$rand_keys[0]]);
 					unset($teams[$rand_keys[1]]);
 					WeeklyMatch::create([
-						'host' => $host,
-						'away' => $away,
+						'host_team' => $host,
+						'away_team' => $away,
 						'week' => $week,
 						'host_goal' => $faker->numberBetween(1, 7),
 						'away_goal' => $faker->numberBetween(1, 7),

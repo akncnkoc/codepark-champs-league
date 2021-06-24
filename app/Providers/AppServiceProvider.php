@@ -1,28 +1,34 @@
 <?php
 
-namespace App\Providers;
+	namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+	use App\Repostories\Teams\TeamsRepository;
+	use App\Repostories\Teams\TeamsRepositoryInterface;
 
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
+	use App\Repostories\WeeklyMatches\WeeklyMatchesRepository;
+	use App\Repostories\WeeklyMatches\WeeklyMatchesRepositoryInterface;
+	use Illuminate\Support\ServiceProvider;
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-}
+	class AppServiceProvider extends ServiceProvider
+	{
+		/**
+		 * Register any application services.
+		 *
+		 * @return void
+		 */
+		public function register()
+		{
+			$this->app->bind(TeamsRepositoryInterface::class, TeamsRepository::class);
+			$this->app->bind(WeeklyMatchesRepositoryInterface::class, WeeklyMatchesRepository::class);
+		}
+
+		/**
+		 * Bootstrap any application services.
+		 *
+		 * @return void
+		 */
+		public function boot()
+		{
+			//
+		}
+	}

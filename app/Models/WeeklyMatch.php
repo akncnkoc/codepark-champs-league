@@ -13,12 +13,12 @@
 
 		public function host_team()
 		{
-			return $this->belongsTo(Team::class, 'host');
+			return $this->belongsTo(Team::class, 'host_team');
 		}
 
 		public function away_team()
 		{
-			return $this->belongsTo(Team::class, 'away');
+			return $this->belongsTo(Team::class, 'away_team');
 		}
 
 		public function host_team_goal()

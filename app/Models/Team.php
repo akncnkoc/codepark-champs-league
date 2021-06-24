@@ -10,6 +10,11 @@
 		use HasFactory;
 
 		protected $guarded = [];
+		public $wonnedMatchCount;
+		public $losedMatchCount;
+		public $drawnMatchCount;
+		public $pts;
+		public $playedMatchCount;
 
 		public function weekly_matches()
 		{
